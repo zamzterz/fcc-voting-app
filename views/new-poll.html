@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>FCC Voting app</title>
+
+		<link href="public/css/main.css" rel="stylesheet" type="text/css">
+	</head>
+
+	<body>
+		<div class="container">
+			<h1>New poll</h1>
+				<form method="POST">
+					<div>
+						<label for="question">Question</label>
+						<input type="text" id="question" name="question" required>
+					</div>
+					<div id="answers">
+						<label for="question">Answers</label>
+						<input type="text" id="answer" name="answer" required>
+						<button type="button" id="add">+</button>
+					</div>
+					<div>
+						<button id="submit" type="submit">Create new poll</button>
+					</div>
+				</form>
+		</div>
+
+		<script type="text/javascript" src="public/controllers/newPollController.client.js"></script>
+	</body>
+</html>

@@ -1,0 +1,38 @@
+doctype html
+
+html
+	head
+		title FCC Voting App, Login
+		link(href="../public/css/main.css" rel="stylesheet")
+
+	body
+		.container
+			h1(id="question")
+
+			canvas(id="pollChart" height="50")
+
+			if pollIsMine
+				a(id="share-btn" href="https://twitter.com/share"
+				  class="twitter-share-button"
+					data-size="large" data-text="Vote in my new poll!"
+					data-show-count="false") Tweet
+
+					script(src="//platform.twitter.com/widgets.js" charset="utf-8" async)
+
+			form(id="vote")
+				select(id="answers" name="answer")
+				button(id="voteBtn" type="button") Vote
+
+			if user
+				form(id="createNewAnswer")
+					label(for="newAnswer") New answer
+					input(type="text", id="newAnswer", name="answer")
+					button(id="newAnswerBtn" type="button") Create and vote
+
+		script(type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js")
+		script(type="text/javascript" src="../public/common/palette.js")
+		script(src="https://code.jquery.com/jquery-3.1.1.min.js"
+					 integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+					 crossorigin="anonymous")
+		script(type="text/javascript" src="../public/common/ajax-functions.js")
+		script(type="text/javascript" src="../public/controllers/pollController.client.js")
